@@ -6,7 +6,7 @@
 /*   By: zahmamed <zahmamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 19:14:48 by zahmamed          #+#    #+#             */
-/*   Updated: 2026/11/13 15:35:57 by zahmamed         ###   ########.fr       */
+/*   Updated: 2026/11/13 17:52:29 by zahmamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,13 @@ typedef struct s_list{
     int content;
     struct s_list *next;
 }   t_list;
+
+typedef struct s_push{
+    t_list *head_a;
+    t_list *head_b;
+    int strg;
+    int bench;
+}   t_push;
 
 int push_swap(int argc , char **argv);
 int ft_special_check(char *tab);
