@@ -6,7 +6,7 @@
 /*   By: zahmamed <zahmamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 18:51:17 by zahmamed          #+#    #+#             */
-/*   Updated: 2026/11/13 13:45:48 by zahmamed         ###   ########.fr       */
+/*   Updated: 2026/11/13 15:33:40 by zahmamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,15 @@ int push_swap(int argc , char **argv){
     t_list *head_a =NULL;
     //t_list *head_b = NULL;
     t_list *stack_a;
-    char *flags []= {"--simple","--complex","--medium","--bench","--adaptive",NULL};
-    if(argc > 1){
+    int strg = 0;
+    int bench =0;
+    char *flags []= {"--simple","--complex","--medium","--adaptive",NULL};
+    if(argc > 1 && (ft_count_bench(argv) <=1 && ft_count_flags(flags , argv)<=1)){
         while(i < argc){
-            if(ft_isflag(flags , argv[i])){
-                printf("i find a flag\n");
-                i++;
-            }
+            if(ft_isbench(argv[i]))
+                bench =1;
+            else if(ft_isflag(flags , argv[i]))
+                strg = ft_read_flag(argv[i]);
             else{
                 stack_a = ft_parse_args(argv[i] , head_a);
                 if(!stack_a){
@@ -32,13 +34,26 @@ int push_swap(int argc , char **argv){
                     return (1);
                 }
                 head_a = stack_a ;
-                //ft_print_list(head_a);
-                i++;
             }
+            i++;
         }
-    }
-    //free apres avoir fini le traitement
-    ft_print_list(head_a); 
-    ft_free_all(head_a , NULL);
+        /*********** */
+        printf("Strategie detectee : ");
+        if (strg == 1)
+            printf("SIMPLE\n");
+        else if (strg == 2)
+            printf("MEDIUM\n");
+        else if (strg == 3)
+            printf("COMPLEX\n");
+        else
+            printf("ADAPTIVE\n");
+
+        printf("Benchmark : %s\n", bench ? "ON" : "OFF");
+        } 
+        //free apres avoir fini le traitement
+        else{
+            ft_putstr_fd(2 , "Error\n");
+            ft_free_all(head_a , NULL);
+        }
     return (0);
 }

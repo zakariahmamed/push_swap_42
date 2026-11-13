@@ -6,7 +6,7 @@
 /*   By: zahmamed <zahmamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/11 23:02:19 by zahmamed          #+#    #+#             */
-/*   Updated: 2026/11/12 21:43:59 by zahmamed         ###   ########.fr       */
+/*   Updated: 2026/11/13 13:56:29 by zahmamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int main(void)
 */
 
 
-
+/*
 #include "push_swap.h"
 #include <stdio.h>
 
@@ -143,3 +143,20 @@ int	main(int argc, char **argv)
 	printf("Memoire liberee\n");
 	return (0);
 }
+*/
+#include"push_swap.h"
+
+int	main(int argc, char **argv)
+{
+	return (push_swap(argc, argv));
+}
+
+
+
+
+
+
+
+
+
+
