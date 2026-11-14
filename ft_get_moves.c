@@ -6,10 +6,11 @@
 /*   By: zahmamed <zahmamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/13 18:17:32 by zahmamed          #+#    #+#             */
-/*   Updated: 2026/11/14 14:28:11 by zahmamed         ###   ########.fr       */
+/*   Updated: 2026/11/14 14:47:03 by zahmamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
 
 int ft_nbr_nodes(t_list *head){
     t_list *current = head;

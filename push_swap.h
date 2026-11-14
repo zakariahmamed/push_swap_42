@@ -6,7 +6,7 @@
 /*   By: zahmamed <zahmamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 19:14:48 by zahmamed          #+#    #+#             */
-/*   Updated: 2026/11/13 17:52:29 by zahmamed         ###   ########.fr       */
+/*   Updated: 2026/11/14 14:55:40 by zahmamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,18 @@ int ft_isbench(char *flag);
 int ft_read_flag(char *flag);
 int ft_count_flags(char **flags,char **list_arg);
 int ft_strcmp(char *str1 , char *str2);
+int ft_nbr_nodes(t_list *head);
+t_list *ft_swap(t_list *head);
+t_list *ft_add_front(t_list *head , t_list *new_node);
+t_list *ft_push(t_list *src , t_list *dest);
+void ft_add_back(t_list *head , t_list* new_node);
+void ft_sa(t_push *data);
+void ft_sb(t_push *data);
+t_list *ft_pb(t_push *data);
+t_list *ft_pa(t_push *data);
+t_list *ft_ra(t_push *data);
+t_list *ft_rb(t_push *data);
+void ft_rr(t_push *data);
+t_list *ft_rra(t_push *data);
+t_list* ft_rrb(t_push *data);
 #endif
