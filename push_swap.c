@@ -6,7 +6,7 @@
 /*   By: zahmamed <zahmamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/12 18:51:17 by zahmamed          #+#    #+#             */
-/*   Updated: 2026/11/13 18:09:10 by zahmamed         ###   ########.fr       */
+/*   Updated: 2026/11/14 14:37:36 by zahmamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,20 @@ static int ft_process_arg(t_push *data , char *arg , char **flags){
     }  
     return (1); 
 }
-int push_swap(int argc , char **argv){
+static t_push set_data_zero(void){
     t_push data;
-    int i =1;
-    char *flags []= {"--simple","--complex","--medium","--adaptive",NULL};
+    
     data.head_a = NULL;
     data.head_b = NULL;
     data.strg = 0;
     data.bench = 0;
+    return data;
+}
+int push_swap(int argc , char **argv){
+    t_push data;
+    int i =1;
+    char *flags []= {"--simple","--complex","--medium","--adaptive",NULL};
+    data = set_data_zero();
     if(argc > 1 && (ft_count_bench(argv) <=1 && ft_count_flags(flags , argv)<=1)){
         while(i < argc){
             if(ft_process_arg(&data , argv[i],flags))
