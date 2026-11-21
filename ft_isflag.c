@@ -13,13 +13,8 @@
 #include "push_swap.h"
 
 
-int ft_isflag(char **flags , char *arg){
-    int i = 0;
-    while(flags[i]){
-        if(ft_strcmp(flags[i],arg) == 0){
-            return (1);
-        }
-        i++;
-    }
+int ft_isflag(char *arg){
+    if(ft_strcmp("--simple",arg) || ft_strcmp("--medium",arg) || ft_strcmp("--complex",arg) || ft_strcmp("--adaptive",arg))
+        return (1);
     return (0);
 }

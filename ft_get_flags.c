@@ -12,11 +12,11 @@
 
 #include "push_swap.h"
 
-int ft_count_flags(char **flags,char **list_arg){
+int ft_count_flags(char **list_arg){
     int i =1;
     int c_f = 0;
     while(list_arg[i]){
-        if(ft_isflag(flags,list_arg[i]))
+        if(ft_isflag(list_arg[i]))
             c_f++;
         i++;
     }
@@ -33,7 +33,7 @@ int ft_count_bench(char **list_arg){
     return c_b;
 }
 int ft_isbench(char *flag){
-    if(!ft_strcmp(flag , "--bench")){
+    if(ft_strcmp(flag , "--bench")){
         return 1;
     }
     return 0;
